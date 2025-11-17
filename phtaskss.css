@@ -4,7 +4,7 @@
     border-color: var(--color-purple) !important; 
 }
 
-.task-list-item[data-task-priority="highest"] span { 
+.task-list-item[data-task-priority="highest"]:not([data-task-status-type="DONE"]) { 
     color: var(--color-purple);
 }
 
@@ -13,7 +13,7 @@
      border-color: var(--color-red) !important;
 }
 
-.task-list-item[data-task-priority="high"]:not([data-task-status-type="DONE"]) span { 
+.task-list-item[data-task-priority="high"]:not([data-task-status-type="DONE"]) { 
     color: var(--color-red);
 }
 
@@ -22,7 +22,7 @@
     border-color: var(--color-orange);
 }
 
-.task-list-item[data-task-priority="medium"]:not([data-task-status-type="DONE"]) span { 
+.task-list-item[data-task-priority="medium"]:not([data-task-status-type="DONE"]) { 
     color: var(--color-orange);
 }
 
@@ -58,9 +58,10 @@
 /* A special color for overdue due dates */
 .task-list-item[data-task-status-type="TODO"] .task-due[data-task-due^="past-"] span,
 .task-list-item[data-task-status-type="IN_PROGRESS"] .task-due[data-task-due^="past-"] span {
-    background: var(--color-pink);
+    background: rgba(var(--color-pink-rgb),0.6);
     border-radius: 10px;
     padding: 2px 8px;
+    margin: 4px;
 }
 
 .task-list-item[data-task-status-type="DONE"] .task-due[data-task-due^="past-"] span
